@@ -38,9 +38,19 @@ const listaPlatos = [
     }
 ]
 
+
 let detalleMenuController={
     index:function(req,res){
         res.render('detalleMenu',{about:about,menu:listaPlatos});
+    },
+    detallePlato:function(req,res){
+        if(req.params.id!=undefined){
+            let plato=listaPlatos.filter(function(pl){
+                 return pl.id==req.params.id;
+             });
+             let pl=plato[0];
+            res.render('detallePlato',{plato:pl});
+        }
     }
 }
 module.exports=detalleMenuController;

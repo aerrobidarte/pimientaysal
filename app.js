@@ -11,7 +11,7 @@ const detalleMenu = require ('./routers/detalleMenu.js');
 app.set('view engine','ejs')
 
 app.use('/',home);
-app.use('/detalleMenu',detalleMenu);
+app.use('/detalle',detalleMenu);
 
 app.listen(3000, ()=>{
     console.log("Servidor Funcionando");
